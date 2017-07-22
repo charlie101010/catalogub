@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+
+<h1>New Item</h1>
+
+<form action="{{url_for('newItem', category_id=category.id)}}" method='POST'>
+
+<p>Name:</p>
+	<input type='text' size='30' name='name'>
+
+<p>Description:</p>
+	<input type='text' size='100' name='description'>
+
+<br/>
+
+
+<select name="catoptions">
+	<option value="{{category.id}}">{{category.name}}</option>
+	{% for cat in categories %}
+		{% if cat.name != category.name %}
+		  <option value="{{cat.id}}">{{cat.name}}</option>		
+		 {%endif%}
+ 	{% endfor %}
+</select>
+
+
+
+
+<br/>
+<input type='submit' value='Create'>
+
+
+{% endblock %}

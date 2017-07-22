@@ -1,0 +1,59 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+
+
+
+	<div class="categorygroup">
+	
+
+		<div class="categories">
+		<a href="{{url_for('newCategory')}}"><h5>Add a Category</h5></a>
+			<h1>Categories</h1>
+
+			{% for sport in category %}
+
+			<div class="sports">
+
+				<a href="{{url_for('showCategory', category_id=sport.id)}}"><div class="sport">{{sport.name}}</div></a>
+				<br>
+				<a href="{{url_for('editCategory', category_id=sport.id)}}"><div class="options">Edit</div></a>
+				<a href="{{url_for('deleteCategory', category_id=sport.id)}}"><div class="options">Delete</div></a>
+
+			</div>
+
+	
+
+
+
+			{% endfor %}
+		</div>
+
+		
+
+		<div class="items">
+		<a href="{{url_for('newItem', category_id=1)}}"><h5>Add an Item</h5></a>
+
+			<h1>Latest Items</h1>
+
+			{% for item in items %}
+
+
+			<div>
+
+					<a href="{{url_for('showItem', item_id=item.id, category_id=item.category_id)}}"><div class="sport">{{item.name}} ({{item.category.name}})</div></a>
+
+
+
+
+			</div>
+
+
+			{% endfor %}
+
+		</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+
+<h1>Edit Category</h1>
+
+	<form action="{{url_for('editCategory', category_id=category.id)}}" method='POST'>
+
+	<p>Name:</p>
+	<input type='text' size='30' name='name' placeholder='{{category.name}}'>
+
+	<input type='submit' value='Edit'>
+
+</form>
+
+<a href="{{url_for('showCatalog')}}">Cancel</a>
+{% endblock %}

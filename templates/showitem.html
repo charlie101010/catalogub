@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<a href="{{url_for('showCategory', category_id=category.id)}}"><p>Go Back</p></a>
+
+<div>
+
+	<div class="sport">{{item.name}}</div>
+	<p>{{item.description}}</p>
+	<a href="{{url_for('editItem', category_id=item.category_id, item_id=item.id)}}"><div class="options">Edit</div></a>
+	<a href="{{url_for('deleteItem', category_id=item.category_id, item_id=item.id)}}"><div class="options">Delete</div></a>
+
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,48 @@
+/*This provides black styling to the nav bar.  The html for the nav bar can be edited in header.html*/
+.top-menu{
+	background-color: black;
+
+}
+
+/*Adds formatting for category titles*/
+.sport{
+	display: inline;
+	font-size: 18px;
+}
+
+/*.categories{
+	display: inline-block;
+}*/
+
+/*Adds formatting for items on catalog.html*/
+.items{
+	margin-left: 40px;
+}
+
+/*background color for entier application.  This can be changed in main.html*/
+.container{
+	background-color: #DCDCDC;
+}
+
+/*This is for the text formatting for the name of the app.  This can be changed in header.html*/
+.apptitle{
+	font-size: 22px;
+	text-decoration: bold;
+}
+
+/*Formatting for edit and delete buttons*/
+.options{
+	font-size: 12px;
+	display: inline;
+	color: 2A292A;
+}
+
+/*To display categories and items inline on catalog.html*/
+.categorygroup{
+
+	display: inline-flex;
+}
+
+
+
+
