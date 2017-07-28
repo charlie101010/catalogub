@@ -24,6 +24,10 @@ Oauth2client
 
 ### In order to to configure the server, the following steps were required.
 
+1) Create an Amazon Lightsail account.
+2) Create a Ubuntu instance.
+3) Add Port 2200.
+
 #### Setup the grader user.
 
 1) Create the grader user `sudo adduser <username>`.
@@ -39,7 +43,20 @@ Oauth2client
 
 
 #### Configure the firewall
+
 1) Ubuntu comes with a firewall installed by default called "ufw".
+2) Add Port 2200 to the sshd_config file.
+3) Run the following commands to configure the firewall:  `sudo ufw default deny incoming`, `sudo ufw default allow outgoing`, `sudo ufw allow ssh`, `sudo ufw allow 123`, `sudo ufw allow 2200`, `sudo ufw allow http`, `sudo ufw enable`.
+4) Now the firewall is enabled and you will need to login to the server through the command line using SSH.
+5) To login run the following on the command line `ssh -i <private_key> <username>r@34.211.189.79 -p 2200`
+
+#### Getting the Catalog Application on the server
+
+1) Navigate to the `/var/www` directory on the server and clone the github repository for the project.
+2) Create a WSGI file for the project within that directory as well.
+3) Ensure that Facebook and Google have the IP address for your server so that your oAuth process works properly.
+
+
 
 
 
